@@ -1,5 +1,5 @@
 ---
-# defaults file for wildone.xtrabackup
+# defaults file for wildy.percona
 percona_add_repo: true
 percona_install_xtrabackup: true
 percona_xtrabackup_version: 24
