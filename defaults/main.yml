@@ -1,0 +1,3 @@
+---
+# defaults file for wildone.xtrabackup
+percona_xtrabackup_version: 24

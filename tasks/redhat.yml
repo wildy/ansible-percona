@@ -1,0 +1,11 @@
+---
+- name: Add repo file
+  template: src=percona-release.repo.j2 dest=/etc/yum.repos.d/percona-release.repo owner=root group=root mode=0644
+
+- name: Add Percona RPM-GPG key
+  template: src=RPM-GPG-KEY-Percona.j2 dest=/etc/pki/rpm-gpg/RPM-GPG-KEY-Percona owner=root group=root mode=0644
+
+- name: Install Percona XtraBackup
+  yum: name={{ item }} enablerepo=percona-release-{{ ansible_architecture }} state=present update_cache=yes
+  with_items:
+    - percona-xtrabackup-{{ percona_xtrabackup_version }}
